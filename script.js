@@ -63,12 +63,24 @@ function handleMath(symbol){
 function flushOperation(intBuffer){
     if(previousOperator === '+'){
         runningTotal += intBuffer;
+        if(runningTotal === 0){
+            runningTotal = '0';
+        }
     }else if( previousOperator === '-'){
         runningTotal -= intBuffer;
+        if(runningTotal === 0){
+            runningTotal = '0';
+        }
     }else if(previousOperator === 'x'){
         runningTotal *= intBuffer;
+        if(runningTotal === 0){
+            runningTotal = '0';
+        }
     }else if(previousOperator === '÷'){ 
         runningTotal /= intBuffer;
+        if(runningTotal === 0){
+            runningTotal = '0';
+        }
     }
 }
 
